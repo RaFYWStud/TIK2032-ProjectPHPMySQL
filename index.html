@@ -38,6 +38,7 @@
                 and framework usage for web development. Im a fast learner and I
                 can adapt to new environment quickly.
             </p>
+
             <div class="skill-set">
                 <h3>Skill Set</h3>
                 <div class="skill">
@@ -69,6 +70,11 @@
                 </div>
             </div>
         </div>
+
+        <div id="random-quote" class="random-quote">
+            <!-- This is for random quote-->
+        </div>
+
         <footer>
             <div class="social-icons">
                 <a href="https://wa.me/62895706081111"
@@ -82,5 +88,49 @@
                 ></a>
             </div>
         </footer>
+
+        <script>
+            const quotes = [
+                "Technology is best when it brings people together. – Matt Mullenweg",
+                "It has become appallingly obvious that our technology has exceeded our humanity. – Albert Einstein",
+                "The science of today is the technology of tomorrow. – Edward Teller",
+                "Technology is a useful servant but a dangerous master. – Christian Lous Lange",
+                "The real problem is not whether machines think but whether men do. – B.F. Skinner",
+                "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke",
+                "The great myth of our times is that technology is communication. – Libby Larsen",
+                "Technology like art is a soaring exercise of the human imagination. – Daniel Bell",
+                "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road. – Stewart Brand",
+                "We are stuck with technology when what we really want is just stuff that works. – Douglas Adams",
+            ];
+
+            let remainingQuotes = [...quotes];
+
+            function displayRandomQuote() {
+                if (remainingQuotes.length === 0) {
+                    remainingQuotes = [...quotes];
+                }
+
+                const randomIndex = Math.floor(
+                    Math.random() * remainingQuotes.length
+                );
+                const randomQuote = remainingQuotes[randomIndex];
+
+                remainingQuotes.splice(randomIndex, 1);
+
+                const quoteElement = document.getElementById("random-quote");
+                quoteElement.innerHTML = "";
+
+                randomQuote.split("").forEach((char, index) => {
+                    const span = document.createElement("span");
+                    span.textContent = char;
+                    span.style.animationDelay = `${index * 0.02}s`;
+                    quoteElement.appendChild(span);
+                });
+            }
+
+            displayRandomQuote();
+
+            setInterval(displayRandomQuote, 10000);
+        </script>
     </body>
 </html>
