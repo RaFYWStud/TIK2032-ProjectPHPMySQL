@@ -64,6 +64,14 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+/* Text Style */
+.black-outlined-text {
+    text-shadow: 
+        -0.5px -0.5px 0 black, /* Bayangan ke kiri atas */
+        0.5px -0.5px 0 black,  /* Bayangan ke kanan atas */
+        -0.5px 0.5px 0 black,  /* Bayangan ke kiri bawah */
+        0.5px 0.5px 0 black;   /* Bayangan ke kanan bawah */
+}
 /* Navigation Styles */
 nav {
     background-color: var(--nav-bg-color);
@@ -98,6 +106,7 @@ nav a:hover {
 
 /* Header Styles */
 header {
+    position: relative;
     text-align: center;
     padding: 50px 0;
     background-color: var(--header-bg-color);
@@ -113,6 +122,29 @@ header h1 {
 header p {
     font-size: 1.2em;
     color: var(--header-text-color);
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    background-color: transparent;
+    color: transparent;
+    padding: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+    
+
+}
+
+#dark-mode-toggle img {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
 }
 
 /* Profile Image Styles */
