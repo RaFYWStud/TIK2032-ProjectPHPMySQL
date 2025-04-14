@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const toggleDarkMode = document.getElementById("dark-mode-toggle");
+    const allElements = document.querySelectorAll("*");
 
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -11,8 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (document.body.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
+            allElements.forEach((element) => {
+                element.style.transition = "1s";
+            });
         } else {
             localStorage.setItem("theme", "light");
+            allElements.forEach((element) => {
+                element.style.transition = "1s";
+            });
         }
-    })
+    });
 });
