@@ -66,11 +66,8 @@ a:hover {
 
 /* Text Style */
 .black-outlined-text {
-    text-shadow: 
-        -0.5px -0.5px 0 black, /* Bayangan ke kiri atas */
-        0.5px -0.5px 0 black,  /* Bayangan ke kanan atas */
-        -0.5px 0.5px 0 black,  /* Bayangan ke kiri bawah */
-        0.5px 0.5px 0 black;   /* Bayangan ke kanan bawah */
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
 }
 /* Navigation Styles */
 nav {
@@ -126,27 +123,41 @@ header p {
 
 /* Dark Mode Toggle Button */
 #dark-mode-toggle {
-    background-color: transparent;
-    color: transparent;
+    background-color: var(--header-bg-color);
     padding: 0;
-    border: none;
+    border: #1a1a1a;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     position: absolute;
     cursor: pointer;
     top: 20px;
     right: 20px;
-    
-
 }
 
 #dark-mode-toggle img {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
 }
 
+#dark-mode-toggle img:last-child {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle img:first-child {
+    display: none;
+}
+
+.dark-mode #dark-mode-toggle img:last-child {
+    display: block;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
 /* Profile Image Styles */
 .profile-image {
     width: 150px;
@@ -155,6 +166,12 @@ header p {
     margin: 20px auto;
     display: block;
     border: 5px solid var(--header-bg-color);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px var(--container-shadow-color);
 }
 
 /* About Me Random Quote */
