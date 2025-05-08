@@ -1,0 +1,139 @@
+<?php
+require_once 'koneksi.php';
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Home</title>
+    <!-- Font Awesome for social media icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="darkmode.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <button id="dark-mode-toggle">
+            <img src="Asset/Image/icons8-dark-mode-100.png" alt="" />
+            <img src="Asset/Image/icons8-light-mode-100.png" alt="" />
+        </button>
+        <h1>Raffi Ali Noer Golonda</h1>
+        <p class="black-outlined-text">
+            Software Engineering and Web Development Enthusiast
+        </p>
+    </header>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="blog.php">Blog</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <div class="container about-me">
+        <img
+            src="Asset/Image/ProfileImage.jpg"
+            alt="Profile Image"
+            class="profile-image" />
+        <h2>About Me</h2>
+        <p>
+            Hello my name is Raffi, I'm a Software Engineering and Web
+            Development enthusiast especially in the back-end. I'm an IT
+            undergraduate student at Sam Ratulangi University. Currently,
+            I'm learning and deepening my knowledge about API implementation
+            and framework usage for web development. Im a fast learner and I
+            can adapt to new environment quickly.
+        </p>
+
+        <div class="skill-set">
+            <h3>Skill Set</h3>
+            <div class="skill">
+                <img src="Asset/Image/laravel-2.svg" alt="Laravel" />
+                <div class="tooltip">Laravel</div>
+            </div>
+            <div class="skill">
+                <img src="Asset/Image/php-4.svg" alt="PHP" />
+                <div class="tooltip">PHP</div>
+            </div>
+            <div class="skill">
+                <img
+                    src="Asset/Image/tailwind-css-2.svg"
+                    alt="Tailwind CSS" />
+                <div class="tooltip">Tailwind CSS</div>
+            </div>
+            <div class="skill">
+                <img src="Asset/Image/nodejs.svg" alt="NodeJS" />
+                <div class="tooltip">NodeJS</div>
+            </div>
+            <div class="skill">
+                <img src="Asset/Image/mysql-3.svg" alt="MySQL" />
+                <div class="tooltip">MySQL</div>
+            </div>
+            <div class="skill">
+                <img src="Asset/Image/postgresql.svg" alt="PostgreSQL" />
+                <div class="tooltip">PostgreSQL</div>
+            </div>
+        </div>
+
+        <div id="random-quote" class="random-quote">
+            <!-- This is for random quote-->
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://wa.me/62895706081111"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/raffi_golonda"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/RaFYWStud"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const quotes = [
+            "Technology is best when it brings people together. – Matt Mullenweg",
+            "It has become appallingly obvious that our technology has exceeded our humanity. – Albert Einstein",
+            "The science of today is the technology of tomorrow. – Edward Teller",
+            "Technology is a useful servant but a dangerous master. – Christian Lous Lange",
+            "The real problem is not whether machines think but whether men do. – B.F. Skinner",
+            "Any sufficiently advanced technology is indistinguishable from magic. – Arthur C. Clarke",
+            "The great myth of our times is that technology is communication. – Libby Larsen",
+            "Technology like art is a soaring exercise of the human imagination. – Daniel Bell",
+            "Once a new technology rolls over you, if you're not part of the steamroller, you're part of the road. – Stewart Brand",
+            "We are stuck with technology when what we really want is just stuff that works. – Douglas Adams",
+        ];
+
+        let remainingQuotes = [...quotes];
+
+        function displayRandomQuote() {
+            if (remainingQuotes.length === 0) {
+                remainingQuotes = [...quotes];
+            }
+
+            const randomIndex = Math.floor(
+                Math.random() * remainingQuotes.length
+            );
+            const randomQuote = remainingQuotes[randomIndex];
+
+            remainingQuotes.splice(randomIndex, 1);
+
+            const quoteElement = document.getElementById("random-quote");
+            quoteElement.innerHTML = "";
+
+            randomQuote.split("").forEach((char, index) => {
+                const span = document.createElement("span");
+                span.textContent = char;
+                span.style.animationDelay = `${index * 0.02}s`;
+                quoteElement.appendChild(span);
+            });
+        }
+
+        displayRandomQuote();
+
+        setInterval(displayRandomQuote, 10000);
+    </script>
+</body>
+
+</html>
