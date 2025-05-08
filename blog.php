@@ -1,7 +1,6 @@
 <?php
 require_once 'koneksi.php';
-
-$sql = "SELECT * FROM articles ORDER BY created_at DESC";
+$sql = "SELECT id, title, author, content, image_url, created_at FROM articles ORDER BY created_at DESC";
 $result = mysqli_query($conn, $sql);
 if (!$result) {
     die("Query failed: " . mysqli_error($conn));
@@ -41,15 +40,17 @@ if (!$result) {
             <div>
                 <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                 <img src="<?php echo htmlspecialchars($row['image_url']); ?>" alt="Article Image" />
-                <p><?php echo nl2br(htmlspecialchars($row['content'])); ?></p>
+                <p>
+                    <?php echo nl2br(htmlspecialchars(substr($row['content'], 0, 50))); ?>...
+                </p>
                 <p class="article-meta">
                     <span>By: <?php echo htmlspecialchars($row['author']); ?></span>
                     <span>Created at: <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></span>
                 </p>
+                <a href="article_detail.php?id=<?php echo $row['id']; ?>">Read More</a>
                 <hr />
             </div>
         <?php endwhile; ?>
-
         <div>
             <h3>My UTBK Journey</h3>
             <img src="Asset/Image/UtbkLogo.png" alt="" />
