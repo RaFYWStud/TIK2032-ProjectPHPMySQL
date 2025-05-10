@@ -25,7 +25,7 @@ require_once 'koneksi.php';
         <a href="index.php">Home</a>
         <a href="blog.php">Blog</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.php">Contact</a>
     </nav>
     <div class="container contact-info">
         <p>raffigolonda2006@gmail.com</p>
@@ -80,7 +80,7 @@ require_once 'koneksi.php';
                             <h2><?php echo htmlspecialchars($row['commentator_name']); ?></h2>
                             <span class="comment-meta"><?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></span>
                         </div>
-                        <p class="comment-text"><?php echo nl2br(htmlspecialchars($row['comment_text'])); ?></p>
+                        <i class="comment-text"><?php echo nl2br(htmlspecialchars($row['comment_text'])); ?></i>
                     </div> <?php endwhile;
                     else: ?>
                 <p>No comments yet. Be the first to comment!</p>

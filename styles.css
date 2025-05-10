@@ -442,10 +442,30 @@ img {
 .comment-text {
     text-align: left;
     font-style: normal;
-    font-size: 0.5rem;
-    color: var(--text-color);
+    font-size: 1rem;
+    color: var(--quote-text-color);
     line-height: 1.5;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#load-more-comments {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--link-color);
+    color: var(--header-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#load-more-comments:hover {
+    background-color: var(--link-hover-color);
+    transform: scale(1.05);
 }
 
 /* Gallery Styles */
