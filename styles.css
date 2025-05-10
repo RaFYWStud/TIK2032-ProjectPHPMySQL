@@ -289,11 +289,11 @@ img {
     height: auto;
 }
 
-/* Specific Page Styles */
 .about-me {
     text-align: center;
 }
 
+/* Contact Style*/
 .contact-info {
     text-align: center;
     margin-top: 50px;
@@ -339,6 +339,79 @@ img {
 
 .contact-info a:hover {
     transform: translateY(-5px);
+}
+
+.comment-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--container-shadow-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--container-shadow-color);
+}
+
+.comment-section h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.comment-section form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.comment-section form input,
+.comment-section form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--container-shadow-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.comment-section form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--link-color);
+    color: var(--header-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-section form button:hover {
+    background-color: var(--link-hover-color);
+}
+
+.comment-list {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--container-shadow-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--container-shadow-color);
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment p {
+    margin: 5px 0;
+}
+
+.comment-meta {
+    font-size: 0.8rem;
+    color: var(--quote-text-color);
 }
 
 /* Gallery Styles */

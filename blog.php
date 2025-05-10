@@ -35,7 +35,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         <a href="index.php">Home</a>
         <a href="blog.html">Blog</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.php">Contact</a>
     </nav>
     <div class="container blog-container">
         <button id="open-modal" class="create-article-button">

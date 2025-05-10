@@ -31,7 +31,7 @@ require_once 'koneksi.php';
         <a href="index.php">Home</a>
         <a href="blog.php">Blog</a>
         <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.php">Contact</a>
     </nav>
     <div class="container about-me">
         <img
