@@ -58,7 +58,7 @@ require_once 'koneksi.php';
                 <input type="text" id="commentator_name" name="commentator_name" required />
 
                 <label for="comment_text">Your Comment:</label>
-                <input type="text" id="comment_text" name="comment_text" required />
+                <textarea name="comment_text" id="comment_text" required></textarea>
 
                 <button type="submit">Submit</button>
 

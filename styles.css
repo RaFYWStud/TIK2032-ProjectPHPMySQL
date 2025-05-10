@@ -365,7 +365,8 @@ img {
 .comment-section form input,
 .comment-section form textarea {
     width: 100%;
-    padding: 10px;
+    padding-top: 5px;
+    padding-right: 0px;
     margin-bottom: 20px;
     border: 1px solid var(--container-shadow-color);
     border-radius: 5px;
@@ -375,9 +376,13 @@ img {
 }
 
 .comment-section form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+    display: flex;
+    width: 50%;
+    padding: 7px;
+    margin-left: 25%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: var(--link-color);
     color: var(--header-text-color);
     border: none;
