@@ -565,6 +565,25 @@ img {
 }
 
 /* Blog Modal Button Style*/
+#open-modal {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--link-color);
+    color: var(--header-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#open-modal:hover {
+    background-color: var(--link-hover-color);
+    transform: scale(1.05);
+}
+
 .modal {
     display: none;
     position: fixed; 
