@@ -65,27 +65,67 @@ require_once 'koneksi.php';
             </form>
         </div>
 
-        <!-- filepath: c:\laragon\www\TIK2032-ProjectPHPMySQL\contact.php -->
-        <div class="container comment-list">
+        <div class="comment-list">
             <h2>Comments</h2>
+            <hr>
             <?php
-            $sql = "SELECT commentator_name, comment_text, created_at FROM comments ORDER BY created_at DESC";
+            $limit = 5;
+            $sql = "SELECT commentator_name, comment_text, created_at FROM comments ORDER BY created_at DESC LIMIT $limit";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0):
                 while ($row = mysqli_fetch_assoc($result)): ?>
                     <div class="comment">
-                        <p><strong><?php echo htmlspecialchars($row['commentator_name']); ?></strong> said:</p>
-                        <p><?php echo nl2br(htmlspecialchars($row['comment_text'])); ?></p>
-                        <p class="comment-meta">Posted on: <?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></p>
-                        <hr />
-                    </div>
-                <?php endwhile;
-            else: ?>
+                        <div class="comment-details">
+                            <h2><?php echo htmlspecialchars($row['commentator_name']); ?></h2>
+                            <span class="comment-meta"><?php echo date('F j, Y, g:i a', strtotime($row['created_at'])); ?></span>
+                        </div>
+                        <p class="comment-text"><?php echo nl2br(htmlspecialchars($row['comment_text'])); ?></p>
+                    </div> <?php endwhile;
+                    else: ?>
                 <p>No comments yet. Be the first to comment!</p>
             <?php endif; ?>
         </div>
+        <button id="load-more-comments" data-offset="5">Load More Comments</button>
     </div>
 </body>
 
 </html>
+
+<script>
+    document.getElementById('load-more-comments').addEventListener('click', function() {
+        const button = this;
+        const offset = parseInt(button.getAttribute('data-offset'));
+
+        fetch('load_comments.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `offset=${offset}`
+            })
+            .then(response => response.json())
+            .then(comments => {
+                if (comments.length > 0) {
+                    const commentList = document.querySelector('.comment-list');
+                    comments.forEach(comment => {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+                        commentDiv.innerHTML = `
+                        <div class="comment-details">
+                            <h2>${comment.commentator_name}</h2>
+                            <span class="comment-meta">${new Date(comment.created_at).toLocaleString()}</span>
+                        </div>
+                        <p class="comment-text">${comment.comment_text.replace(/\n/g, '<br>')}</p>
+                    `;
+                        commentList.appendChild(commentDiv);
+                    });
+
+                    button.setAttribute('data-offset', offset + comments.length);
+                } else {
+                    button.style.display = 'none';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>

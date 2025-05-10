@@ -393,8 +393,9 @@ img {
 }
 
 .comment-list {
-    margin-top: 50px;
-    padding: 20px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 40px;
     background-color: var(--container-bg-color);
     border: 1px solid var(--container-shadow-color);
     border-radius: 10px;
@@ -402,16 +403,44 @@ img {
 }
 
 .comment {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 15px;
     margin-bottom: 20px;
+    background-color: var(--container-bg-color);
+    border: 1px solid var(--container-shadow-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--container-shadow-color);
 }
 
-.comment p {
-    margin: 5px 0;
+
+.comment-details {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+
+.comment-details h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: left;
 }
 
 .comment-meta {
     font-size: 0.8rem;
     color: var(--quote-text-color);
+}
+
+.comment-text {
+    text-align: left;
+    font-style: normal;
+    font-size: 0.5rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-top: 10px;
 }
 
 /* Gallery Styles */
