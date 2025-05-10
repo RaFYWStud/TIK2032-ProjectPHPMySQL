@@ -19,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Insert article into the database
             $sql = "INSERT INTO articles (title, author, content, image_url) VALUES ('$title', '$author', '$content', '$imageUrl')";
             if (mysqli_query($conn, $sql)) {
-                echo "Article created successfully!";
+                header("Location: blog.php?success=1");
+                exit;
             } else {
                 echo "Error: " . mysqli_error($conn);
             }

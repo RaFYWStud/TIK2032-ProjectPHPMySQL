@@ -26,16 +26,19 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
-    <header>
+    <nav>
+        <a href="blog.php">Back to blog</a>
+    </nav>
+
+    <div class="article-container">
         <h1><?php echo htmlspecialchars($article['title']); ?></h1>
-    </header>
-    <div class="container article-container">
-        <img src="<?php echo htmlspecialchars($article['image_url']); ?>" alt="Article Image">
-        <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
         <p class="article-meta">
             <span>By: <?php echo htmlspecialchars($article['author']); ?></span>
+            <br>
             <span>Created at: <?php echo date('F j, Y, g:i a', strtotime($article['created_at'])); ?></span>
         </p>
+        <img src="<?php echo htmlspecialchars($article['image_url']); ?>" alt="Article Image">
+        <p><?php echo nl2br(htmlspecialchars($article['content'])); ?></p>
         <a href="blog.php">Back to Blog</a>
     </div>
 </body>

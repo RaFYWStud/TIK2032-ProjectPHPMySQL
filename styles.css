@@ -601,20 +601,20 @@ img {
 
 .article-meta {
     font-size: 0.9rem;
-    color: var(--quote-text-color);
+    color:#2980b9;
     margin-bottom: 20px;
-    text-align: left;
-    font-style: italic;
+    text-align: center;
 }
 
 .article-meta span {
+    text-align: center;
     margin-right: 10px;
 }
 
 .article-container blockquote {
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--quote-text-color);
+    color: var(--quote-tsext-color);
     border-left: 4px solid var(--link-color);
     padding-left: 15px;
     margin: 20px 0;
