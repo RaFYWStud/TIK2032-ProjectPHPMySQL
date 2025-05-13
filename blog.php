@@ -32,7 +32,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
         <h1>Blog</h1>
     </header>
     <nav>
-        <a href="index.php">Home</a>
+        <a href="index.html">Home</a>
         <a href="blog.php">Blog</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.php">Contact</a>
