@@ -39,7 +39,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
     </nav>
     <div class="container blog-container">
         <button id="open-modal" class="create-article-button">
-            Buat Artikel
+            Add Article
         </button>
 
         <?php while ($row = mysqli_fetch_assoc($result)): ?>
@@ -63,21 +63,21 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
 <div id="article-modal" class="modal">
     <div class="modal-content">
         <span id="close-modal" class="close-button">&times;</span>
-        <h2>Buat Artikel Baru</h2>
+        <h2>Make a New Article</h2>
         <form
             action="save_article.php"
             method="POST"
             enctype="multipart/form-data">
-            <label for="title">Judul:</label>
+            <label for="title">Title:</label>
             <input type="text" id="title" name="title" required />
 
-            <label for="author">Pembuat:</label>
+            <label for="author">Author:</label>
             <input type="text" id="author" name="author" required />
 
-            <label for="content">Isi Artikel:</label>
+            <label for="content">Content:</label>
             <textarea id="content" name="content" rows="10" required></textarea>
 
-            <label for="image">Gambar Artikel:</label>
+            <label for="image">Image:</label>
             <input
                 type="file"
                 id="image"
