@@ -54,53 +54,7 @@ if (isset($_GET['success']) && $_GET['success'] == 1) {
                 <hr />
             </div>
         <?php endwhile; ?>
-        <div>
-            <h3>My UTBK Journey</h3>
-            <img src="Asset/Image/UtbkLogo.png" alt="" />
-            <p>
-                UTBK is a test that u can take when u want to go to a
-                college in Indonesia. From what u read earlier u can tell
-                that it is not an easy test u can play around with. So, here
-                is my story about how i pass this test
-                <a href="Article1.html">Read more</a>.
-            </p>
-            <hr />
-        </div>
 
-        <div>
-            <h3>Online Video Game is Really Helpful to Learn English</h3>
-            <img
-                src="Asset/Image/EnglishImage.jpg"
-                alt="English"
-                width="250" />
-            <p>
-                English is one of the most important languages to learn.
-                Most online video games are in English, which provides a
-                great opportunity for players to improve their language
-                skills. By playing these games, players can learn new
-                vocabulary, improve their reading comprehension, and
-                practice their communication skills with other players from
-                around the world. <a href="Article2.html">Read more</a>.
-            </p>
-            <hr />
-        </div>
-
-        <div>
-            <h3>The Importance of Time Management for Students</h3>
-            <img
-                src="Asset/Image/TimeManagement.jpg"
-                alt="Time Management"
-                width="250" />
-            <p>
-                Time management is a crucial skill for students to master.
-                With the increasing demands of academics, extracurricular
-                activities, and personal responsibilities, managing time
-                effectively can make a significant difference in achieving
-                success.
-                <a href="Article3.html">Read more</a>.
-            </p>
-            <hr />
-        </div>
     </div>
 </body>
 
